@@ -1,0 +1,16 @@
+{
+    "name": "awebcli",
+    "version-semver": "1.0.0",
+    "description": "awebcli module for tina",
+    "homepage": "https://dc01dgitlab01v.atempo.com/convergence/awebcli/",
+    "dependencies": [
+      {
+        "name": "vcpkg-cmake",
+        "host": true
+      },
+      {
+        "name": "vcpkg-cmake-config",
+        "host": true
+      }
+    ]
+  }
