@@ -1,30 +1,25 @@
+vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
 
-vcpkg_from_gitlab(
+vcpkg_from_git(
     OUT_SOURCE_PATH SOURCE_PATH
-    GITLAB_URL https://dc01dgitlab01v.atempo.com/
-    REPO convergence/awebcli
-    REF ${VERSION}_Beta
-    SHA512 7fb41f25a954c73786bb6b97382b0f2de714dbc7653c9c579983a4b4058bd546a367b3387108509d44ebda566097a83d6c0a74a7889917f630a5bd65f775c61e
-    HEAD_REF devel
-    AUTHORIZATION_TOKEN 
+    URL git@dc01dgitlab01v.atempo.com:convergence/awebcli.git
+    REF 75c3b4d68cf4460b7b1b39cb9111d5645848b5e3
 )
 
-#vcpkg_download_distfile(
- #   awebcli
-  #  SOURCE_PATH "${_VCPKG_ROOT}/downloads/awebcli"
-   # DISTFILE "awebcli-1.0.0_Beta.tar.gz"  # Nom du fichier de distribution
-   # SHA512 d41d8cd98f00b204e9800998ecf8427e
-#)
 
 vcpkg_cmake_configure(
     SOURCE_PATH "${SOURCE_PATH}"
-    PREFER_NINJA
-    OPTIONS_RELEASE
     OPTIONS
-        -DCATCH_INSTALL_DOCS=OFF
-        -DCMAKE_CXX_STANDARD=17
-
+        -DBUILD_UNIT_TESTS=OFF
+        -DBUILD_DEMO_APP=OFF
+        -DBUILD_DOC=OFF
 )
 
 vcpkg_cmake_install()
+vcpkg_copy_pdbs()
+vcpkg_cmake_config_fixup()
 
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
+
+file(INSTALL "${CMAKE_CURRENT_LIST_DIR}/usage" DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}")
+file(WRITE "${CURRENT_PACKAGES_DIR}/share/${PORT}/copyright" "(c) 2023 - Atempo")

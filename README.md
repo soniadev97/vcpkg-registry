@@ -1,4 +1,4 @@
-# registry-vcpkg-swe
+# vcpkg-registry-test
 
 
 
@@ -15,14 +15,14 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin https://dc01dgitlab01v.atempo.com/soniac/registry-vcpkg-swe.git
+git remote add origin https://dc01dgitlab01v.atempo.com/convergence/vcpkg-registry-test.git
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-- [ ] [Set up project integrations](https://dc01dgitlab01v.atempo.com/soniac/registry-vcpkg-swe/-/settings/integrations)
+- [ ] [Set up project integrations](https://dc01dgitlab01v.atempo.com/convergence/vcpkg-registry-test/-/settings/integrations)
 
 ## Collaborate with your team
 

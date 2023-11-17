@@ -1,13 +1,12 @@
 {
-    "default": {
-        "catch2": {
-            "baseline": "2.13.9",
-            "port-version": 0
-        },
-
-        "awebcli": {
-            "baseline": "1.0.0",
-            "port-version": 0
-        }
+  "default": {
+    "awebcli": {
+      "baseline": "1.0.0",
+      "port-version": 0
+    },
+    "openssl": {
+      "baseline": "3.0.11",
+      "port-version": 0
     }
+  }
 }
