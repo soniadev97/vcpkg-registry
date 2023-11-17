@@ -1,4 +1,0 @@
-awebcli provides CMake targets:
-
-    find_package(awebcli CONFIG REQUIRED)
-    target_link_libraries(main PRIVATE atempo::awebcli)
